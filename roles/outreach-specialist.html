@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outreach & Email Specialist - Join Our Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <script defer src="/js/theme.js"></script>
+    <script defer src="/js/animations.js"></script>
+    <style>
+        .role-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .flex-box {
+            flex: 1;
+            min-width: 300px;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .flex-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            opacity: 0.2;
+        }
+
+        .email-animation {
+            height: 300px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email {
+            position: absolute;
+            width: 60px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 5px;
+            animation: sendEmail 4s infinite;
+        }
+
+        .email::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-style: solid;
+            border-width: 20px 30px;
+            border-color: transparent;
+            border-top-color: var(--secondary-color);
+        }
+
+        @keyframes sendEmail {
+            0% {
+                left: -60px;
+                transform: translateY(50px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(120px) rotate(10deg);
+            }
+            100% {
+                left: calc(100% + 60px);
+                transform: translateY(200px) rotate(-10deg);
+            }
+        }
+
+        .apply-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transform: perspective(1000px) rotateX(0deg);
+            transition: transform 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .apply-button:hover {
+            transform: perspective(1000px) rotateX(10deg) translateY(-5px);
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header class="main-header">
+        <h1>Kanhaiya Raj Pandey</h1>
+        <div class="theme-toggle">
+            <button id="themeToggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="email-animation">
+        <div class="email"></div>
+    </div>
+
+    <div class="role-content">
+        <h1>Outreach & Email Specialist</h1>
+
+        <div class="quote-box">
+            <p>"Every email is an opportunity to connect, engage, and make a lasting impression that resonates with your audience."</p>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-box">
+                <h2><i class="fas fa-envelope"></i> About the Role</h2>
+                <p>We're seeking a skilled Outreach & Email Specialist who can craft compelling messages that build meaningful connections with our audience. Your expertise in email marketing and communication will help us create impactful campaigns that drive engagement and results.</p>
+            </div>
+
+            <div class="flex-box">
+                <h2><i class="fas fa-tasks"></i> Responsibilities</h2>
+                <ul>
+                    <li>Design and execute email marketing campaigns</li>
+                    <li>Create engaging email content and newsletters</li>
+                    <li>Manage and segment contact databases</li>
+                    <li>Monitor and analyze email metrics</li>
+                    <li>Optimize email deliverability</li>
+                    <li>Develop outreach strategies</li>
+                    <li>A/B test campaign elements</li>
+                </ul>
+            </div>
+
+            <div class="flex-box">
+                <h2><i class="fas fa-clipboard-check"></i> Requirements</h2>
+                <ul>
+                    <li>2+ years of email marketing experience</li>
+                    <li>Proficiency in email marketing platforms</li>
+                    <li>Strong copywriting abilities</li>
+                    <li>Knowledge of email deliverability best practices</li>
+                    <li>Experience with A/B testing</li>
+                    <li>Analytical mindset for data-driven decisions</li>
+                    <li>Understanding of CAN-SPAM compliance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <p>"The art of email marketing lies in creating personal connections at scale, turning subscribers into engaged community members."</p>
+        </div>
+
+        <a href="https://forms.google.com/your-form-link" class="apply-button">
+            <i class="fas fa-paper-plane"></i> Apply Now
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) {
+                return false;
+            }
+        };
+    </script>        
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animation = document.querySelector('.email-animation');
+            animation.style.opacity = '0';
+            animation.style.transform = 'translateY(20px)';
+
+            // Create multiple email elements
+            for (let i = 0; i < 3; i++) {
+                const email = document.createElement('div');
+                email.className = 'email';
+                email.style.animationDelay = `${i * 1.3}s`;
+                animation.appendChild(email);
+            }
+
+            setTimeout(() => {
+                animation.style.transition = 'all 0.5s ease-out';
+                animation.style.opacity = '1';
+                animation.style.transform = 'translateY(0)';
+            }, 300);
+        });
+    </script>
+</body>
+</html>

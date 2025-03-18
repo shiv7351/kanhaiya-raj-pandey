@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Manager - Join Our Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <script defer src="/js/theme.js"></script>
+    <script defer src="/js/animations.js"></script>
+    <style>
+        .role-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .flex-box {
+            flex: 1;
+            min-width: 300px;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .flex-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            opacity: 0.2;
+        }
+
+        .social-media-animation {
+            height: 300px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon {
+            position: absolute;
+            font-size: 24px;
+            color: var(--primary-color);
+            opacity: 0;
+            animation: floatIcon 3s infinite;
+        }
+
+        @keyframes floatIcon {
+            0% {
+                transform: translateY(300px) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-50px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .apply-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transform: perspective(1000px) rotateX(0deg);
+            transition: transform 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .apply-button:hover {
+            transform: perspective(1000px) rotateX(10deg) translateY(-5px);
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header class="main-header">
+        <h1>Kanhaiya Raj Pandey</h1>
+        <div class="theme-toggle">
+            <button id="themeToggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="social-media-animation">
+        <!-- Social icons will be added dynamically -->
+    </div>
+
+    <div class="role-content">
+        <h1>Social Media Manager</h1>
+
+        <div class="quote-box">
+            <p>"In the digital age, every post is an opportunity to inspire, engage, and build lasting connections with your audience."</p>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-box">
+                <h2><i class="fas fa-share-nodes"></i> About the Role</h2>
+                <p>We're looking for a creative Social Media Manager to develop and implement strategies that increase our online presence and engagement across all social platforms. Your innovative approach will help shape our brand voice and create meaningful connections with our audience.</p>
+            </div>
+
+            <div class="flex-box">
+                <h2><i class="fas fa-tasks"></i> Responsibilities</h2>
+                <ul>
+                    <li>Develop and manage social media strategy</li>
+                    <li>Create engaging content for multiple platforms</li>
+                    <li>Monitor and engage with audience</li>
+                    <li>Analyze social media metrics</li>
+                    <li>Stay current with social media trends</li>
+                    <li>Collaborate with marketing team</li>
+                    <li>Manage community engagement</li>
+                </ul>
+            </div>
+
+            <div class="flex-box">
+                <h2><i class="fas fa-clipboard-check"></i> Requirements</h2>
+                <ul>
+                    <li>3+ years of social media management experience</li>
+                    <li>Proven track record of growing social media presence</li>
+                    <li>Experience with social media management tools</li>
+                    <li>Strong content creation abilities</li>
+                    <li>Understanding of social media analytics</li>
+                    <li>Excellence in community management</li>
+                    <li>Creative storytelling skills</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <p>"Great social media isn't about what you say – it's about sparking conversations that matter to your community."</p>
+        </div>
+
+        <a href="https://forms.google.com/your-form-link" class="apply-button">
+            <i class="fas fa-paper-plane"></i> Apply Now
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) {
+                return false;
+            }
+        };
+    </script>   
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animation = document.querySelector('.social-media-animation');
+            const icons = ['fa-twitter', 'fa-instagram', 'fa-facebook', 'fa-linkedin', 'fa-tiktok'];
+
+            function createIcon() {
+                const icon = document.createElement('i');
+                icon.className = `fab ${icons[Math.floor(Math.random() * icons.length)]} social-icon`;
+                icon.style.left = `${Math.random() * 80 + 10}%`;
+                icon.style.animationDelay = `${Math.random() * 2}s`;
+                animation.appendChild(icon);
+
+                // Remove icon after animation
+                setTimeout(() => {
+                    icon.remove();
+                }, 3000);
+            }
+
+            // Initial fade in
+            animation.style.opacity = '0';
+            animation.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+                animation.style.transition = 'all 0.5s ease-out';
+                animation.style.opacity = '1';
+                animation.style.transform = 'translateY(0)';
+
+                // Create icons periodically
+                setInterval(createIcon, 300);
+            }, 300);
+        });
+    </script>
+</body>
+</html>

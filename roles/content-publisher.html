@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Publisher - Join Our Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <script defer src="/js/theme.js"></script>
+    <script defer src="/js/animations.js"></script>
+    <style>
+        .role-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .flex-box {
+            flex: 1;
+            min-width: 300px;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .flex-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            opacity: 0.2;
+        }
+
+        .publish-animation {
+            height: 300px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .document {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            animation: publishDocument 4s infinite;
+        }
+
+        .document::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            height: 3px;
+            background: var(--primary-color);
+            box-shadow: 0 10px 0 var(--primary-color), 0 20px 0 var(--primary-color);
+            opacity: 0.5;
+        }
+
+        @keyframes publishDocument {
+            0% {
+                left: -60px;
+                transform: translateY(100px) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                left: calc(100% + 60px);
+                transform: translateY(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .apply-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transform: perspective(1000px) rotateX(0deg);
+            transition: transform 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .apply-button:hover {
+            transform: perspective(1000px) rotateX(10deg) translateY(-5px);
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header class="main-header">
+        <h1>Kanhaiya Raj Pandey</h1>
+        <div class="theme-toggle">
+            <button id="themeToggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="publish-animation">
+        <!-- Documents will be added dynamically -->
+    </div>
+
+    <div class="role-content">
+        <h1>Content Publisher</h1>
+
+        <div class="quote-box">
+            <p>"Great content isn't just about creation – it's about delivering the right message to the right audience at the right time."</p>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-box">
+                <h2><i class="fas fa-upload"></i> About the Role</h2>
+                <p>We're seeking a detail-oriented Content Publisher who can masterfully manage and optimize our content distribution across multiple platforms. Your expertise will ensure our content reaches its maximum potential and engages our target audience effectively.</p>
+            </div>
+
+            <div class="flex-box">
+                <h2><i class="fas fa-tasks"></i> Responsibilities</h2>
+                <ul>
+                    <li>Manage content publishing workflow</li>
+                    <li>Optimize content for different platforms</li>
+                    <li>Maintain content calendar</li>
+                    <li>Ensure content quality and consistency</li>
+                    <li>Monitor content performance</li>
+                    <li>Coordinate with content creators</li>
+                    <li>Implement SEO best practices</li>
+                </ul>
+            </div>
+
+            <div class="flex-box">
+                <h2><i class="fas fa-clipboard-check"></i> Requirements</h2>
+                <ul>
+                    <li>2+ years of content management experience</li>
+                    <li>Proficiency in CMS platforms</li>
+                    <li>Strong attention to detail</li>
+                    <li>Understanding of SEO best practices</li>
+                    <li>Experience with content scheduling tools</li>
+                    <li>Excellent organizational skills</li>
+                    <li>Data-driven decision making abilities</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <p>"Success in publishing is about finding the perfect balance between timing, quality, and audience engagement."</p>
+        </div>
+
+        <a href="https://forms.google.com/your-form-link" class="apply-button">
+            <i class="fas fa-paper-plane"></i> Apply Now
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) {
+                return false;
+            }
+        };
+    </script>
+        
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animation = document.querySelector('.publish-animation');
+            animation.style.opacity = '0';
+            animation.style.transform = 'translateY(20px)';
+
+            // Create multiple document elements
+            for (let i = 0; i < 3; i++) {
+                const document = document.createElement('div');
+                document.className = 'document';
+                document.style.animationDelay = `${i * 1.5}s`;
+                animation.appendChild(document);
+            }
+
+            setTimeout(() => {
+                animation.style.transition = 'all 0.5s ease-out';
+                animation.style.opacity = '1';
+                animation.style.transform = 'translateY(0)';
+            }, 300);
+        });
+    </script>
+</body>
+</html>

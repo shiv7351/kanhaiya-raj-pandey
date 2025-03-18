@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Collaboration Manager - Join Our Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <script defer src="/js/theme.js"></script>
+    <script defer src="/js/animations.js"></script>
+    <style>
+        .role-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .flex-box {
+            flex: 1;
+            min-width: 300px;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .flex-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            opacity: 0.2;
+        }
+
+        .network-animation {
+            height: 300px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .node {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .connection {
+            position: absolute;
+            height: 2px;
+            background: var(--secondary-color);
+            transform-origin: left center;
+            animation: connect 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes connect {
+            0% { transform: scaleX(0); opacity: 0; }
+            50% { transform: scaleX(1); opacity: 1; }
+            100% { transform: scaleX(0); opacity: 0; }
+        }
+
+        .apply-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transform: perspective(1000px) rotateX(0deg);
+            transition: transform 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .apply-button:hover {
+            transform: perspective(1000px) rotateX(10deg) translateY(-5px);
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header class="main-header">
+        <h1>Kanhaiya Raj Pandey</h1>
+        <div class="theme-toggle">
+            <button id="themeToggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="network-animation">
+        <!-- Network nodes will be added dynamically -->
+    </div>
+
+    <div class="role-content">
+        <h1>Brand Collaboration Manager</h1>
+
+        <div class="quote-box">
+            <p>"Building bridges between brands isn't just business – it's the art of creating synergies that transform possibilities into realities."</p>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-box">
+                <h2><i class="fas fa-handshake"></i> About the Role</h2>
+                <p>We're seeking a visionary Brand Collaboration Manager to orchestrate powerful partnerships that elevate our brand presence. Your strategic thinking and relationship-building prowess will be key in creating meaningful connections that drive growth.</p>
+            </div>
+
+            <div class="flex-box">
+                <h2><i class="fas fa-tasks"></i> Responsibilities</h2>
+                <ul>
+                    <li>Develop and maintain strategic brand partnerships</li>
+                    <li>Negotiate collaboration terms and contracts</li>
+                    <li>Create innovative campaign strategies</li>
+                    <li>Track and analyze partnership performance</li>
+                    <li>Maintain strong relationships with partners</li>
+                    <li>Identify and pursue new collaboration opportunities</li>
+                </ul>
+            </div>
+
+            <div class="flex-box">
+                <h2><i class="fas fa-clipboard-check"></i> Requirements</h2>
+                <ul>
+                    <li>3+ years of experience in brand management or partnerships</li>
+                    <li>Strong negotiation and communication skills</li>
+                    <li>Proven track record of successful collaborations</li>
+                    <li>Analytics and reporting expertise</li>
+                    <li>Bachelor's degree in Marketing or related field</li>
+                    <li>Strategic thinking and creative problem-solving abilities</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <p>"Great partnerships are built on trust, innovation, and the shared vision of creating something extraordinary together."</p>
+        </div>
+
+        <a href="https://forms.google.com/your-form-link" class="apply-button">
+            <i class="fas fa-handshake"></i> Apply Now
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) {
+                return false;
+            }
+        };
+    </script>
+        
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animation = document.querySelector('.network-animation');
+            const nodeCount = 6;
+            const nodes = [];
+
+            // Create nodes
+            for (let i = 0; i < nodeCount; i++) {
+                const node = document.createElement('div');
+                node.className = 'node';
+                node.style.left = `${Math.random() * 80 + 10}%`;
+                node.style.top = `${Math.random() * 80 + 10}%`;
+                animation.appendChild(node);
+                nodes.push(node);
+            }
+
+            // Create connections
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const connection = document.createElement('div');
+                    connection.className = 'connection';
+
+                    const updateConnection = () => {
+                        const rect1 = nodes[i].getBoundingClientRect();
+                        const rect2 = nodes[j].getBoundingClientRect();
+                        const animRect = animation.getBoundingClientRect();
+
+                        const x1 = rect1.left - animRect.left + rect1.width / 2;
+                        const y1 = rect1.top - animRect.top + rect1.height / 2;
+                        const x2 = rect2.left - animRect.left + rect2.width / 2;
+                        const y2 = rect2.top - animRect.top + rect2.height / 2;
+
+                        const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+                        const angle = Math.atan2(y2 - y1, x2 - x1);
+
+                        connection.style.width = `${length}px`;
+                        connection.style.left = `${x1}px`;
+                        connection.style.top = `${y1}px`;
+                        connection.style.transform = `rotate(${angle}rad) scaleX(1)`;
+                    };
+
+                    animation.appendChild(connection);
+                    updateConnection();
+                }
+            }
+
+            // Fade in animation
+            animation.style.opacity = '0';
+            animation.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                animation.style.transition = 'all 0.5s ease-out';
+                animation.style.opacity = '1';
+                animation.style.transform = 'translateY(0)';
+            }, 300);
+        });
+    </script>
+</body>
+</html>

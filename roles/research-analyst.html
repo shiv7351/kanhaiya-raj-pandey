@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Analyst - Join Our Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <script defer src="/js/theme.js"></script>
+    <script defer src="/js/animations.js"></script>
+    <style>
+        .role-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .flex-box {
+            flex: 1;
+            min-width: 300px;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .flex-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            opacity: 0.2;
+        }
+
+        .data-analysis-animation {
+            height: 300px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .data-point {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0;
+            animation: dataPoint 3s infinite;
+        }
+
+        .trend-line {
+            position: absolute;
+            height: 2px;
+            background: var(--secondary-color);
+            transform-origin: left center;
+            opacity: 0;
+            animation: trendLine 3s infinite;
+        }
+
+        @keyframes dataPoint {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes trendLine {
+            0% {
+                transform: scaleX(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scaleX(0);
+                opacity: 0;
+            }
+        }
+
+        .apply-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transform: perspective(1000px) rotateX(0deg);
+            transition: transform 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .apply-button:hover {
+            transform: perspective(1000px) rotateX(10deg) translateY(-5px);
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header class="main-header">
+        <h1>Kanhaiya Raj Pandey</h1>
+        <div class="theme-toggle">
+            <button id="themeToggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="data-analysis-animation">
+        <!-- Data points and trend lines will be added dynamically -->
+    </div>
+
+    <div class="role-content">
+        <h1>Research Analyst</h1>
+
+        <div class="quote-box">
+            <p>"In the world of data, every number tells a story, and every analysis uncovers opportunities for growth and innovation."</p>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-box">
+                <h2><i class="fas fa-magnifying-glass-chart"></i> About the Role</h2>
+                <p>We're seeking an analytical and detail-oriented Research Analyst to transform complex data into actionable insights. Your expertise in data analysis and research methodologies will help drive our strategic decision-making process.</p>
+            </div>
+
+            <div class="flex-box">
+                <h2><i class="fas fa-tasks"></i> Responsibilities</h2>
+                <ul>
+                    <li>Conduct in-depth market research</li>
+                    <li>Analyze trends and patterns in data</li>
+                    <li>Create comprehensive research reports</li>
+                    <li>Develop research methodologies</li>
+                    <li>Present findings to stakeholders</li>
+                    <li>Maintain research databases</li>
+                    <li>Identify growth opportunities</li>
+                </ul>
+            </div>
+
+            <div class="flex-box">
+                <h2><i class="fas fa-clipboard-check"></i> Requirements</h2>
+                <ul>
+                    <li>3+ years of research experience</li>
+                    <li>Strong analytical and quantitative skills</li>
+                    <li>Proficiency in data analysis tools</li>
+                    <li>Experience with statistical methods</li>
+                    <li>Excellent report writing abilities</li>
+                    <li>Bachelor's degree in related field</li>
+                    <li>Advanced Excel and SQL skills</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <p>"The best analysts don't just see numbers – they see patterns, possibilities, and the pathway to success."</p>
+        </div>
+
+        <a href="https://forms.google.com/your-form-link" class="apply-button">
+            <i class="fas fa-paper-plane"></i> Apply Now
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) {
+                return false;
+            }
+        };
+    </script>   
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animation = document.querySelector('.data-analysis-animation');
+            animation.style.opacity = '0';
+            animation.style.transform = 'translateY(20px)';
+
+            function createDataVisualization() {
+                // Create data points
+                for (let i = 0; i < 5; i++) {
+                    const point = document.createElement('div');
+                    point.className = 'data-point';
+                    point.style.left = `${20 + i * 15}%`;
+                    point.style.top = `${30 + Math.random() * 40}%`;
+                    point.style.animationDelay = `${i * 0.3}s`;
+                    animation.appendChild(point);
+                }
+
+                // Create trend line
+                const line = document.createElement('div');
+                line.className = 'trend-line';
+                line.style.width = '60%';
+                line.style.left = '20%';
+                line.style.top = '50%';
+                animation.appendChild(line);
+            }
+
+            setTimeout(() => {
+                animation.style.transition = 'all 0.5s ease-out';
+                animation.style.opacity = '1';
+                animation.style.transform = 'translateY(0)';
+
+                // Create visualization periodically
+                setInterval(() => {
+                    animation.innerHTML = ''; // Clear previous visualization
+                    createDataVisualization();
+                }, 3000);
+
+                createDataVisualization();
+            }, 300);
+        });
+    </script>
+</body>
+</html>
